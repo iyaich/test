@@ -18,7 +18,7 @@ pipeline {
         echo 'Create Container Image..'
         
         script {
-          openshift.withCluster() {
+          openshift.withCluster('my cluster') {
             openshift.withProject("imen") {
                 def buildConfigExists = openshift.selector("bc", "codelikethewind").exists()
 
@@ -38,7 +38,7 @@ pipeline {
       steps {
         echo 'Deploying....'
         script {
-          openshift.withCluster() {
+          openshift.withCluster('my cluster') {
             openshift.withProject("imen") {
 
               def deployment = openshift.selector("dc", "codelikethewind")
