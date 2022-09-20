@@ -23,10 +23,10 @@ pipeline {
                 //def buildConfigExists = openshift.selector("bc", "codelikethewind").exists()
 
               //  if(!buildConfigExists){
-                    openshift.newBuild("--name=codelikethewind", "--docker-image=docker-registry.default.svc:5000/openshift/spring", "--binary")
+                    openshift.newBuild( "--docker-image=docker-registry.default.svc:5000/openshift/spring", "--binary")
                // }
 
-                openshift.selector("bc", "codelikethewind").startBuild("--from-file=target/simple-servlet-0.0.1-SNAPSHOT.war", "--follow")
+              //  openshift.selector("bc", "codelikethewind").startBuild("--from-file=target/simple-servlet-0.0.1-SNAPSHOT.war", "--follow")
 
             }
 
