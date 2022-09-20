@@ -21,7 +21,7 @@ pipeline {
           openshift.withCluster('my cluster') {
             
             openshift.withProject("imen") {
-                  def created = openshift.newApp( 'https://github.com/openshift/ruby-hello-world' )
+                  def created = openshift.newApp( 'https://github.com/openshift/ruby-hello-worldjson )
 
                   // This Selector exposes the same operations you have already seen.
                   // (And many more that you haven't!).
