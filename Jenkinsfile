@@ -21,7 +21,7 @@ pipeline {
           openshift.withCluster('my cluster') {
             
             openshift.withProject() {
-                def result = openshift.raw( 'status', '-v' )
+                def result = openshift.raw( 'status')
                 echo "Cluster status: ${result.out}"
               
             }
